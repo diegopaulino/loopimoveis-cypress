@@ -1,7 +1,6 @@
 {
   "name": "aocubo-cypress",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -18,5 +17,14 @@
   },
   "dependencies": {
     "faker": "^4.1.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diegopaulino/loopimoveis-cypress.git"
+  },
+  "bugs": {
+    "url": "https://github.com/diegopaulino/loopimoveis-cypress/issues"
+  },
+  "homepage": "https://github.com/diegopaulino/loopimoveis-cypress#readme",
+  "description": ""
 }

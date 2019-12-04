@@ -18,7 +18,24 @@ const menuRegisterProperty = () => {
 
 const fillAdvertiserField = () => {
   cy.get('[name="advertiser"] input').type('Diego')
-  cy.get('.visible div:first-child()').click()
+  cy.get('div.visible div span:first-child').contains('Anunciante 11112019 - diego@teste.com.br ').click()
+}
+
+const fillPropertyType = () => {
+  let propety_types = [
+    "Apartamento", "Casa", "Sobrado", "Sala Comercial", "Terreno", "Cobertura", "Galpão/Depósito/Armazém", "Comercial", "Prédio Comercial",
+    "Loja/Ponto Comercial", "Casa de Condomínio", "Lote/Terreno", "Kitnet", "Loja", "Flat", "Chácara", "Prédio", "Studio",
+    "Industrial", "Rural", "Loft"
+  ]
+
+  let chosen_type = propety_types[Math.floor(Math.random() * propety_types.length)]
+
+  cy.get('[data-testid="propertiesType-dropdown"]').contains('div.default', 'Selecione').type(`${chosen_type}`)
+  cy.get('div.visible').contains(`${chosen_type}`).click()
+}
+
+const fillHighlight = () => {
+  let highlight = ["Destaque", "Super Destaque", "Super Destaque / Destaque"]
 }
 
 context('Login', () => {
@@ -32,5 +49,7 @@ describe('Access advertiser menu and register', () => {
     accessMenu()
     menuRegisterProperty()
     fillAdvertiserField()
+    fillPropertyType()
+    fillHighlight()
   })
 })
