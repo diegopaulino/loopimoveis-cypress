@@ -1,6 +1,6 @@
 const login = () => {
   cy.visit('/')
-  cy.get('input[placeholder="Insira seu e-mail"]').type("admin@loopimoveis.com")
+  cy.get('input[placeholder="Insira seu e-mail"]').type("admin@teste.com")
   cy.get('input[placeholder="Insira sua senha"]').type("admin")
   cy.get('[data-testid=login-signin]').click()
   cy.get('[data-testid="card"] h2', {timeout: 10000}).should('have.text', 'Seu perfil')
